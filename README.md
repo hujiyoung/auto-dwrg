@@ -50,17 +50,7 @@
 
 ## 📂 项目结构示意
 
-auto-dwrg/ 
-
-        ├── get_point.js # 获取坐标调试工具 
-
-        ├── hijack.js # 黑杰克挂机模式 
-
-        ├── mfz12.js # 模仿者12人挂机模式 
-
-        ├── normal.js # 普通匹配监管者挂机 
-        
-        └── README.md # 项目说明文件
+<pre><code>``` auto-dwrg/ ├── get_point.js # 获取坐标调试工具 ├── hijack.js # 黑杰克挂机模式 ├── mfz12.js # 模仿者12人挂机模式 ├── normal.js # 普通匹配监管者挂机 └── README.md # 项目说明文件 ``` </code></pre>
 
 
 ## 🔒 最终声明
