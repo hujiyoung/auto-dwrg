@@ -47,8 +47,8 @@ function randomDrag(startX, startY) {
 function main() {
     let points = [
         {x: 1733, y: 761, delay: 100},//右下角书
-        {x: 1098, y: 469, delay: 100},//娱乐模式
-        {x: 1364, y: 841, delay: 100},//模仿者
+        {x: 1098, y: 469, delay: 50},//娱乐模式
+        {x: 1360, y: 841, delay: 100},//模仿者
         {x: 1467, y: 635, delay: 100},//12人
         {x: 680, y: 734, delay: 100},//模仿者准备
         // {x: 963, y: 964, delay: 100},//退出键、弃票键
