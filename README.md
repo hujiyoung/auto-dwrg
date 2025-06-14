@@ -68,3 +68,8 @@
 ---
 
 🧠 **建议优先通过正常游戏方式提升等级和获取资源，本脚本仅供自动化爱好者学习参考。**
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+
