@@ -18,7 +18,7 @@
 ## 🛠️ 使用指南
 
 1. **环境配置：**
-   - 本项目依赖于 `autox` 环境:https://github.com/aiselp/AutoX/releases，下载该软件后将脚本导入到软件内运行即可。
+   - 本项目依赖于 `autox` 环境：[AutoX Releases](https://github.com/aiselp/AutoX/releases)，下载该软件后将脚本导入到软件内运行即可。
    - PC端使用雷电模拟器仿真安卓手机，在其中安装autox.js和第五人格，并将autox.js中的功能全部打开。
    - 手机端仍然安装autox.js，但部分型号手机安全系数较高，打开usb调试比较困难，可能需要获取root权限。
    - 请将雷电模拟器屏幕分辨率设置为1920*1080以适应脚本中预设好的坐标。
