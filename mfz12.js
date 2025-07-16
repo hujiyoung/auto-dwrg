@@ -1,18 +1,22 @@
 auto();
 console.show();
 
-let shouldStop = false;
-let wasInAllowedTime = false; // 标记是否已经在允许时间段内
-let enteredTimeRange = false; // 标记是否刚刚进入允许时间段
+let shouldPause = false; // 改为暂停标志
+let wasInAllowedTime = false;
+let enteredTimeRange = false;
 
 // 控制台输入监听
 threads.start(function() {
-    console.log("提示: 在控制台输入回车键(ENTER)将停止脚本");
-    while (!shouldStop) {
+    console.log("提示: 在控制台输入回车键(ENTER)将暂停/继续脚本");
+    while (true) {
         let input = console.input();
         if (input !== null) {
-            shouldStop = true;
-            console.log("接收到停止指令，准备退出...");
+            shouldPause = !shouldPause; // 切换暂停状态
+            if (shouldPause) {
+                console.log("脚本已暂停，再次按回车键继续...");
+            } else {
+                console.log("脚本已继续运行...");
+            }
         }
     }
 });
@@ -27,7 +31,7 @@ function isInAllowedTime() {
     return (
         (totalMinutes >= 8 * 60 && totalMinutes <= 12 * 60 + 30) || // 08:00 - 12:30
         (totalMinutes >= 14 * 60 && totalMinutes <= 19 * 60 + 30) || // 14:00 - 19:30
-        (totalMinutes >= 21 * 60 || totalMinutes <= 90)              // 21:00 - 01:30
+        (totalMinutes >= 21 * 60 || totalMinutes <= 2*60 + 30)       // 21:00 - 01:30
     );
 }
 
@@ -64,9 +68,14 @@ function main() {
     let dragStartPoint = {x: 216, y: 792};
     let cycleCount = 0;
 
-    console.log("脚本已启动，在控制台按回车键停止");
+    console.log("脚本已启动，在控制台按回车键暂停/继续");
 
-    while (!shouldStop) {
+    while (true) {
+        // 检查暂停状态
+        while (shouldPause) {
+            sleep(1000);
+        }
+
         let nowAllowed = isInAllowedTime();
 
         if (!nowAllowed) {
@@ -95,9 +104,14 @@ function main() {
         console.log(`开始第 ${cycleCount} 轮操作`);
 
         randomDrag(dragStartPoint.x, dragStartPoint.y);
-        if (shouldStop) break;
+        if (shouldPause) continue;
 
-        for (let i = 0; i < points.length && !shouldStop; i++) {
+        for (let i = 0; i < points.length; i++) {
+            // 检查暂停状态
+            while (shouldPause) {
+                sleep(1000);
+            }
+            
             let point = points[i];
             console.log(`点击第 ${i + 1} 个点`);
             clickPoint(point.x, point.y);
@@ -106,11 +120,13 @@ function main() {
             }
         }
 
+        // 检查暂停状态
+        while (shouldPause) {
+            sleep(1000);
+        }
+        
         sleep(1000); // 每轮循环结束前稍作等待
     }
-
-    console.log("脚本已停止");
-    exit();
 }
 
 main();
