@@ -31,7 +31,7 @@ function isInAllowedTime() {
     return (
         (totalMinutes >= 8 * 60 && totalMinutes <= 12 * 60 + 30) || // 08:00 - 12:30
         (totalMinutes >= 14 * 60 && totalMinutes <= 19 * 60 + 30) || // 14:00 - 19:30
-        (totalMinutes >= 21 * 60 || totalMinutes <= 2*60 + 30)       // 21:00 - 01:30
+        (totalMinutes >= 21 * 60 || totalMinutes <= 2 * 60 + 30)       // 21:00 - 02:30
     );
 }
 
