@@ -54,14 +54,14 @@ function randomDrag(startX, startY) {
 
 function main() {
     let points = [
-        {x: 1733, y: 761, delay: 100},
-        {x: 1733, y: 761, delay: 100},
-        {x: 1098, y: 469, delay: 100},
-        {x: 1370, y: 841, delay: 100},
-        {x: 1480, y: 535, delay: 100},
-        {x: 680, y: 734, delay: 100},
-        {x: 1100, y: 964, delay: 200},
-        {x: 1200, y: 981, delay: 100},
+        {x: 1733, y: 761, delay: 100},      // 点击两次书，复位
+        {x: 1733, y: 761, delay: 100},      //
+        {x: 1098, y: 469, delay: 100},      // 点击娱乐模式
+        {x: 1101, y: 841, delay: 100},      // 点击模仿者模式
+        {x: 1480, y: 535, delay: 100},      // 选择12人
+        {x: 680, y: 734, delay: 100},       // 开始游戏
+        {x: 1100, y: 964, delay: 200},      // 确认准备
+        {x: 1200, y: 981, delay: 100},      
         {x: 150, y: 444, delay: 100}
     ];
 
